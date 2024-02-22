@@ -59,6 +59,8 @@ def print_directory_contents(path):
         else:
             print(f"{Fore.GREEN}{item.name}{Style.RESET_ALL}")
 
+    # python main.py C:\Users\MikeK\PycharmProjects\in_process\goit-algo-hw-04
+
 
 # ________________________________________________ Четверте завдання ________________________________________________ #
 
@@ -122,13 +124,14 @@ def main():
             print("Invalid command.")
 
 
-path = 'C:\\Users\\MikeK\\PycharmProjects\\in_process\\goit-algo-hw-04'
-
 if __name__ == "__main__":
     # main()
     # print_directory_contents(path)
     # path = input("вкажіть шлях до файла з котами")
     # print(get_cats_info(path))
     while True:
-        path = input("вкажіть шлях до директорії")
-        print(print_directory_contents(path))
+        if len(sys.argv) < 2:
+            print(f"{Fore.RED}Будь ласка, вкажіть шлях до директорії як аргумент.{Style.RESET_ALL}")
+        else:
+            directory_path = sys.argv[1]
+            print_directory_contents(directory_path)
