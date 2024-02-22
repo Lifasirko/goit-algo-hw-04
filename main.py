@@ -35,6 +35,7 @@ def get_cats_info(path):
         print(f"Виникла помилка: {str(e)}")
         return f"Виникла помилка: {str(e)}"
 
+
 # C:\Users\MikeK\PycharmProjects\in_process\goit-algo-hw-04\cats_file.txt
 
 # __________________________________________________ Третє завдання __________________________________________________ #
@@ -54,7 +55,7 @@ def print_directory_contents(path):
     for item in path.iterdir():
         if item.is_dir():
             print(f"{Fore.BLUE}{item.name}{Style.RESET_ALL}")
-            print_directory_contents(item)
+            print_directory_contents(item)  # Рекурсивний виклик для піддиректорій
         else:
             print(f"{Fore.GREEN}{item.name}{Style.RESET_ALL}")
 
@@ -131,4 +132,3 @@ if __name__ == "__main__":
     while True:
         path = input("вкажіть шлях до директорії")
         print(print_directory_contents(path))
-
